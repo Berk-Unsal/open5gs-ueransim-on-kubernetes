@@ -1,4 +1,4 @@
-.PHONY: test tests deploy check teardown
+.PHONY: test tests deploy check teardown docs-build docs-serve
 
 test tests:
 	python3 -m pytest -q
@@ -11,3 +11,9 @@ check:
 
 teardown:
 	bash scripts/teardown.sh
+
+docs-build:
+	python3 -m mkdocs build --strict
+
+docs-serve:
+	python3 -m mkdocs serve
